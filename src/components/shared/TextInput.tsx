@@ -3,34 +3,54 @@ import './TextInput.scss'
 import hidePassword from '../../icons/hide-password.svg'
 import showPassword from '../../icons/show-password.svg'
 
-interface Props {
-    title: string,
-    placeholder?: string,
-    value: string,
-    handleChange: (value: string) => void,
-    img?: boolean
+interface Error {
+    email: boolean,
+    password: boolean
 }
 
-const Input: React.FC<Props> = ({title, placeholder, value, handleChange, img}) => {
+interface Props {
+    title: string,
+    value: string,
+    handleChange: (value: string) => void,
+    error: Error,
+    setError: React.Dispatch<React.SetStateAction<Error>>,
+    errorText: string,
+    placeholder?: string,
+    hasIcon?: boolean,
+}
+
+const Input: React.FC<Props> = ({title, placeholder, value, handleChange, error, setError, errorText, hasIcon}) => {
 
     const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
 
-    const handleClick = () => {
+    const handleClick = ():void => {
         passwordVisibility 
         ? setPasswordVisibility(false) 
         : setPasswordVisibility(true)
     }
 
+    const handleFocus = ():void => {
+        if(error && title==="Email"){
+            setError({...error, email: false})
+        } else if(error && title==="Password") {
+            setError({...error, password: false})
+        }
+    }
+
+    let errorVal = title ==="Email" ? error.email : error.password;
     return (
         <>
             <div className="input-title">{title}</div>
             <div className="input-container">
-                <input className="input-field" 
-                       value={value} placeholder={placeholder} 
+                <input className={"input-field" + (errorVal ? " error" : "")}
+                       value={value} 
+                       placeholder={placeholder} 
                        onChange={(e) => handleChange(e.target.value)}
-                       type={!passwordVisibility ? "password" : "text"}
+                       onFocus={handleFocus}
+                       type={!passwordVisibility && hasIcon ? "password" : "text"}
                        />
-                {img && <img className="password-visibility-icon" 
+                <div className={"validation-error" + (errorVal ? " active" : "")}>{errorText}</div>
+                {hasIcon && <img className="password-visibility-icon" 
                              alt="password-visibility" 
                              src={passwordVisibility ? showPassword : hidePassword}
                              onClick={handleClick}
