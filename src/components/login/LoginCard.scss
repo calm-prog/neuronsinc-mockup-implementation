@@ -3,4 +3,13 @@
     grid-template-columns: 1fr 1fr;
     margin-top: 9rem;
     height: 34rem;
+    padding-bottom: 10rem;
+}
+
+@media (max-width: 768px) {
+    .login-card-container {
+        grid-template-columns: 1fr;
+        height: unset;
+        margin-top: 5rem;
+    }
 }
