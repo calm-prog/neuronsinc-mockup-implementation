@@ -24,7 +24,7 @@ const LoginForm = () => {
                         title="Password"
                         value={passwordVal}
                         handleChange={setPasswordVal}
-                        img={true}
+                        hasIcon={true}
                     />
                     <div className="login-assistance">
                         <div>

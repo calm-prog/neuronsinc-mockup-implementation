@@ -8,10 +8,10 @@ interface Props {
     placeholder?: string,
     value: string,
     handleChange: (value: string) => void,
-    img?: boolean
+    hasIcon?: boolean
 }
 
-const Input: React.FC<Props> = ({title, placeholder, value, handleChange, img}) => {
+const Input: React.FC<Props> = ({title, placeholder, value, handleChange, hasIcon}) => {
 
     const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
 
@@ -28,9 +28,9 @@ const Input: React.FC<Props> = ({title, placeholder, value, handleChange, img}) 
                 <input className="input-field" 
                        value={value} placeholder={placeholder} 
                        onChange={(e) => handleChange(e.target.value)}
-                       type={!passwordVisibility ? "password" : "text"}
+                       type={!passwordVisibility && hasIcon ? "password" : "text"}
                        />
-                {img && <img className="password-visibility-icon" 
+                {hasIcon && <img className="password-visibility-icon" 
                              alt="password-visibility" 
                              src={passwordVisibility ? showPassword : hidePassword}
                              onClick={handleClick}
