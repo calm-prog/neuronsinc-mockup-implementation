@@ -1,0 +1,50 @@
+@use '../shared/variables' as *;
+
+.login-form {
+  background-color: #fff;
+  height: 100%;
+  width: 32.5rem;
+  box-shadow: $card-shadow;
+  border-radius: 0 30px 30px 0;
+  overflow: auto;
+
+  &-heading {
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.9);
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .spacer {
+    width: 5rem;
+    height: 0.25rem;
+    background-color: $input-primary;
+    border-radius: 1rem;
+    margin-top: 0.6rem;
+    margin-left: 0.1rem;
+  }
+
+  &-content {
+    width: 80%;
+    margin: auto;
+    margin-top: 4rem;
+  }
+
+  .login-assistance {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    color: #b8b8b8;
+
+    * {
+      cursor: pointer;
+    }
+  }
+
+  &-button {
+    margin-top: 3rem;
+  }
+}

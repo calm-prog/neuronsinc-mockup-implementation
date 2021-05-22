@@ -1,5 +1,5 @@
 import './LoginIntro.scss'
-import login from '../../login.svg'
+import login from '../../icons/login.svg'
 
 const LoginIntro = () => {
     return (
