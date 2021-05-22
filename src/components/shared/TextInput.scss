@@ -1,0 +1,37 @@
+@use '../shared/variables' as *;
+
+.input-title {
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+    color: $title-primary;
+    font-size: 0.8rem;
+    
+}
+
+.input-container {
+    position:relative;
+    margin-top: 0.3rem;
+}
+
+.input-field {
+    box-sizing:border-box;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid #D0D0D0;
+    border-radius: 0.6rem;
+
+    &:focus {
+        box-shadow: 0 0 0.1rem 0.07rem $input-primary;
+        outline: none;
+    }
+}
+
+.password-visibility-icon {
+    position: absolute;
+    right: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+    height: 100%;
+    width: 1.2rem;
+    top: 0;
+}

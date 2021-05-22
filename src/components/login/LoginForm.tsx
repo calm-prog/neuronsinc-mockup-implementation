@@ -1,0 +1,49 @@
+import './LoginForm.scss'
+import TextInput from '../shared/TextInput'
+import {useState} from 'react'
+import Button from '../shared/Button';
+
+const LoginForm = () => {
+    const [emailVal, setEmailVal] = useState<string>("");
+    const [passwordVal, setPasswordVal] = useState<string>("");
+    const [rememberDetails, setRememberDetails] = useState<boolean>(false);
+
+    return (
+        <div className="login-form-container">
+            <form className="login-form">
+                <div className="login-form-content">
+                    <div className="login-form-heading">User <span>login</span></div>
+                    <div className="spacer"></div>
+                    <TextInput
+                        title="Email"
+                        placeholder="Jane@company.com"
+                        value={emailVal}
+                        handleChange={setEmailVal}
+                    />
+                    <TextInput 
+                        title="Password"
+                        value={passwordVal}
+                        handleChange={setPasswordVal}
+                        img={true}
+                    />
+                    <div className="login-assistance">
+                        <div>
+                            <input type="radio" 
+                                   name="save-details" 
+                                   checked={rememberDetails} 
+                                   onChange={() => setRememberDetails(true)}
+                                   id="save-details"
+                                   />
+                            <label htmlFor="save-details">Remember me?</label>
+                        </div>
+                        <div>Forgot password?</div>
+                    </div>
+                    <Button cssClass=" login-form-button" 
+                            text="Login"/>
+                </div>
+            </form>
+        </div>
+    )
+}   
+
+export default LoginForm

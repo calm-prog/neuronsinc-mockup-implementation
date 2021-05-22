@@ -1,13 +1,17 @@
 
 .header {
     background-color: #fff;
-    margin: 0.75rem 1.75rem 0 1.75rem;
+    margin: 1rem 2.5rem 0 2.5rem;
     border-radius: 15px;
 
     .logo {
-        margin: 0.75rem 0 0.75rem 3.5%;
+        margin: 0.65rem 0 0.65rem 2.5%;
         cursor: pointer;
         transition: 0.1s;
+        position: relative;
+        top: 0.3rem;
+        width: 10.5rem;
+
 
         &:active {
             transform: translate(1px, 1px);
