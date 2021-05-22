@@ -52,3 +52,9 @@
     box-shadow: 0 0 0rem 0.15rem $input-primary;
   }
 }
+
+@media (max-width: 768px) {
+    .button {
+        width: 100%;
+    }
+}

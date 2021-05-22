@@ -1,3 +1,4 @@
+@use './shared/variables' as *;
 
 .header {
     background-color: #fff;
@@ -19,3 +20,13 @@
     }
 }
 
+@media (max-width: 768px) {
+    .header {
+        display:flex;
+        justify-content: center;
+
+        .logo {
+            width: calc(#{$mobile-size} * 10.5rem)
+        }
+    }
+}

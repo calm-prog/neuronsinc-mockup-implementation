@@ -48,3 +48,32 @@
     margin-top: 3rem;
   }
 }
+
+@media (max-width: 1100px) {
+    .login-form {
+      width: $tablet-width;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-form {
+      width: $tablet-width;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-form-container {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .login-form {
+      border-radius: 0px 0px 30px 30px;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+
+      &-heading {
+        font-size: calc(#{$mobile-size} * 2rem);
+      }
+    }
+  }
