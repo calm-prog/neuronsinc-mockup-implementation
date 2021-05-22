@@ -3,11 +3,16 @@ import TextInput from '../shared/TextInput'
 import {useState} from 'react'
 import Button from '../shared/Button';
 
+interface ValidationError {
+    email: boolean,
+    password: boolean
+}
+
 const LoginForm = () => {
     const [emailVal, setEmailVal] = useState<string>("");
     const [passwordVal, setPasswordVal] = useState<string>("");
     const [rememberDetails, setRememberDetails] = useState<boolean>(false);
-    const [validationError, setValidationError] = useState<object>({email: false, password: false});
+    const [validationError, setValidationError] = useState<ValidationError>({email: false, password: false});
 
     const handleSubmit = (e:any):void => {
         e.preventDefault();
@@ -41,12 +46,18 @@ const LoginForm = () => {
                         placeholder="Jane@company.com"
                         value={emailVal}
                         handleChange={setEmailVal}
+                        errorText="Please, enter the email address that you used at the registration"
+                        error={validationError}
+                        setError={setValidationError}
                     />
                     <TextInput 
                         title="Password"
                         value={passwordVal}
                         handleChange={setPasswordVal}
                         hasIcon={true}
+                        errorText="Please, enter your password"
+                        error={validationError}
+                        setError={setValidationError}
                     />
                     <div className="login-assistance">
                         <div>

@@ -19,10 +19,15 @@
     padding: 0.75rem 0.5rem;
     border: 1px solid #D0D0D0;
     border-radius: 0.6rem;
+    transition: 0.2s;
 
     &:focus {
         box-shadow: 0 0 0.1rem 0.07rem $input-primary;
         outline: none;
+    }
+
+    &.error {
+        border-color: #ff1515;   
     }
 }
 
@@ -35,3 +40,19 @@
     width: 1.2rem;
     top: 0;
 }
+
+.validation-error {
+    font-size: 0.7rem;
+    color: #ff1515;
+    font-weight: 500;
+    position: absolute;
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    transition: 0.2s;
+
+    &.active {
+        opacity: 1;
+    }
+}   
+
