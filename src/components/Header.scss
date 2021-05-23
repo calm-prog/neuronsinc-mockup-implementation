@@ -4,6 +4,14 @@
     background-color: #fff;
     margin: 1rem 2.5rem 0 2.5rem;
     border-radius: 15px;
+    transition: 2.5s;
+    transform: translateX(7rem);
+    opacity: 0;
+
+    &.fade-in {
+        transform: translateX(0);
+        opacity: 1;
+    }
 
     .logo {
         margin: 0.65rem 0 0.65rem 2.5%;

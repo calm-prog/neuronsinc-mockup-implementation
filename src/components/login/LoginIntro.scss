@@ -49,5 +49,6 @@
 @media (max-width: 768px) {
   .login-intro-heading {
     font-size: calc(#{$mobile-size} * 1.3rem);
+    margin-top: 1rem;
   }
 }

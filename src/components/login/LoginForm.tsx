@@ -60,7 +60,7 @@ const LoginForm = () => {
                         setError={setValidationError}
                     />
                     <div className="login-assistance">
-                        <div>
+                        <div className="radio-button">
                             <input type="radio" 
                                    name="save-details" 
                                    checked={rememberDetails} 
@@ -69,7 +69,7 @@ const LoginForm = () => {
                                    />
                             <label htmlFor="save-details">Remember me?</label>
                         </div>
-                        <div>Forgot password?</div>
+                        <div className="forgot-password">Forgot password?</div>
                     </div>
                     <Button cssClass=" login-form-button" 
                             text="Login"/>
