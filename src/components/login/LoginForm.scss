@@ -42,6 +42,22 @@
     * {
       cursor: pointer;
     }
+
+    .radio-button {
+      display: flex;
+
+      input {
+        margin: 0 10px 0 0;
+      }
+
+      input:checked + label {
+        color: $text-active;
+      }
+    }
+
+    .forgot-password:active {
+        color: $text-active;
+    }
   }
 
   &-button {
