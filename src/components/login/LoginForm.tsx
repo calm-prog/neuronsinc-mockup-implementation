@@ -48,6 +48,7 @@ const LoginForm = () => {
                         handleChange={setEmailVal}
                         errorText="Please, enter the email address that you used at the registration"
                         error={validationError}
+                        errorVal={validationError.email}
                         setError={setValidationError}
                     />
                     <TextInput 
@@ -57,6 +58,7 @@ const LoginForm = () => {
                         hasIcon={true}
                         errorText="Please, enter your password"
                         error={validationError}
+                        errorVal={validationError.password}
                         setError={setValidationError}
                     />
                     <div className="login-assistance">

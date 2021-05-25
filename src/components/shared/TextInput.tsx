@@ -13,13 +13,14 @@ interface Props {
     value: string,
     handleChange: (value: string) => void,
     error: Error,
+    errorVal: boolean,
     setError: React.Dispatch<React.SetStateAction<Error>>,
     errorText: string,
     placeholder?: string,
     hasIcon?: boolean,
 }
 
-const Input: React.FC<Props> = ({title, placeholder, value, handleChange, error, setError, errorText, hasIcon}) => {
+const Input: React.FC<Props> = ({title, placeholder, value, handleChange, error, errorVal, setError, errorText, hasIcon}) => {
 
     const [passwordVisibility, setPasswordVisibility] = useState<boolean>(false);
 
@@ -37,23 +38,24 @@ const Input: React.FC<Props> = ({title, placeholder, value, handleChange, error,
         }
     }
 
-    let errorVal = title ==="Email" ? error.email : error.password;
     return (
         <>
             <div className="input-title">{title}</div>
-            <div className="input-container">
+            <div className="input-container" data-testid="input-container">
                 <input className={"input-field" + (errorVal ? " error" : "")}
                        value={value} 
                        placeholder={placeholder} 
                        onChange={(e) => handleChange(e.target.value)}
                        onFocus={handleFocus}
                        type={!passwordVisibility && hasIcon ? "password" : "text"}
+                       data-testid={title}
                        />
                 <div className={"validation-error" + (errorVal ? " active" : "")}>{errorText}</div>
                 {hasIcon && <img className="password-visibility-icon" 
-                             alt="password-visibility" 
-                             src={passwordVisibility ? showPassword : hidePassword}
-                             onClick={handleClick}
+                                 alt="password-visibility" 
+                                 src={passwordVisibility ? showPassword : hidePassword}
+                                 onClick={handleClick}
+                                 data-testid="visibility-icon"
                              />}
             </div>
         </>
