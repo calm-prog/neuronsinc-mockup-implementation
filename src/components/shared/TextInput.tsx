@@ -50,7 +50,10 @@ const Input: React.FC<Props> = ({title, placeholder, value, handleChange, error,
                        type={!passwordVisibility && hasIcon ? "password" : "text"}
                        data-testid={title}
                        />
-                <div className={"validation-error" + (errorVal ? " active" : "")}>{errorText}</div>
+                <div className={"validation-error" + (errorVal ? " active" : "")}
+                     data-testid="validation-error">
+                         {errorText}
+                    </div>
                 {hasIcon && <img className="password-visibility-icon" 
                                  alt="password-visibility" 
                                  src={passwordVisibility ? showPassword : hidePassword}

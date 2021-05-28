@@ -37,7 +37,9 @@ const LoginForm = () => {
     return (
         <div className="login-form-container">
             <form className="login-form"
-                  onSubmit={handleSubmit}>
+                  onSubmit={handleSubmit}
+                  data-testid="login-form"
+                  >
                 <div className="login-form-content">
                     <div className="login-form-heading">User <span>login</span></div>
                     <div className="spacer"></div>
